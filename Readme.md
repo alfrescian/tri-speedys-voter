@@ -1,8 +1,4 @@
-# Setup
-
-## Project Setup
-
-## ProjeKt Setup
+## Projekt Setup
     $ git clone https://github.com/alfrescian/tri-speedys-voter.git
     $ cd tri-speedys-voter
     $ npm install
