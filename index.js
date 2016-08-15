@@ -2,8 +2,6 @@ var tough = require('tough-cookie'), cookiejar = new tough.CookieJar(),
     fetch = require('fetch-cookie')(require('node-fetch'), cookiejar),
     MD5 = require('./md5'), shortid = require('shortid'), ip = require('ip');
 
-console.log(ip.address());
-
 var jsprid = '131', jspos = '27', jsart = '0', jschk;
 
 fetch('https://www.perspektive150.de/foerderwettbewerb/startseite.php')
@@ -13,7 +11,7 @@ fetch('https://www.perspektive150.de/foerderwettbewerb/startseite.php')
         jschk = MD5(sessionId + '-' + jsprid);
 
         fetch('https://www.perspektive150.de/foerderwettbewerb/phpscripts/captcha_check.php?scode='+ scode, {
-            credentials: 'include',
+            credentials: 'include'
         })
             .then(function (res) {
                 return res.text();
@@ -27,7 +25,7 @@ fetch('https://www.perspektive150.de/foerderwettbewerb/startseite.php')
                     method: 'POST',
                     body: params,
                     headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'
+                        'Content-Type': 'application/x-www-form-urlencoded',
                     },
                     credentials: 'include'
                 })
